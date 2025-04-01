@@ -3,11 +3,12 @@ function solution(n, q, ans) {
     let candidates = [];
     let stack = [];
     
+    
     for(let i = 1; i <= n - 4; i++) {
         stack.push([i])
     }
     
-    while(stack.length > 0) {
+    while(stack.length > 0) { // 숫자조합 만들기
         let cur = stack.pop();
         if(cur.length === 5) {
             candidates.push(cur);
@@ -22,7 +23,7 @@ function solution(n, q, ans) {
         }
     }
     
-    q.forEach((query, i) => {
+    q.forEach((query, i) => { // 안되는거 제거
         let newCandidates = [];
         candidates.forEach((candidate) => {
             let hit = 0;
