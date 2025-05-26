@@ -2,35 +2,40 @@ import java.util.*;
 
 class Solution {
     public int solution(String begin, String target, String[] words) {
-        int answer = 0;
-        Set<String> s = new HashSet<>();
+        boolean[] v = new boolean[words.length];
         Queue<String> q = new ArrayDeque<>();
         
-        
-        
-        s.add(begin);
         q.offer(begin);
+        int dist = 0;
         
         while(!q.isEmpty()) {
             int qSize = q.size();
-            for(int i = 0; i < qSize; i++) {
+            
+            while(qSize > 0) {
+                qSize--;
                 String cur = q.poll();
-                if(cur.equals(target)) return answer;
-                for(String w : words) {
-                    if(s.contains(w)) continue;
+
+                if(cur.equals(target)) return dist;
+
+                for(int i = 0; i < words.length; i++) {
+                    if(v[i]) continue;
+
                     int count = 0;
-                    for(int j = 0; j < w.length(); j++) {
-                        if(cur.charAt(j) != w.charAt(j)) {
-                            count++;
-                        }
+
+                    for(int c = 0; c < begin.length(); c++) {
+                        if(cur.charAt(c) != words[i].charAt(c)) count++;
                     }
+
                     if(count == 1) {
-                        q.offer(w);
-                        s.add(w);
+                        v[i] = true;
+                        q.offer(words[i]);
                     }
                 }
             }
-            answer++;
+            
+            
+            
+            dist++;
         }
         
         return 0;
