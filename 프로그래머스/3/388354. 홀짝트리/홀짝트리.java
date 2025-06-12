@@ -51,30 +51,21 @@ class Solution {
             
         }
         
-        
-        
-        
-        
-        
-        
         return answer;
     }
     
     private void dfs(int node, Map<Integer, List<Integer>> map, Set<Integer> v, Map<Integer, List<Integer>> treeMap) {
         if(v.contains(node)) return;
-        
         v.add(node);
         treeMap.get(treeId).add(node);
-        
         Set<Integer> childSet = new HashSet<>();
+        
         for(int c : map.get(node)) {
             if(v.contains(c)) continue;
-            
             childSet.add(c);
         }
         
-        for(int child : childSet) {
+        for(int child : childSet) 
             dfs(child, map, v, treeMap);
-        }
     }
 }
