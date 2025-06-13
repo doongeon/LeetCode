@@ -18,5 +18,10 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Backtracking
 |  |
 | ------- |
+| [0046-permutations](https://github.com/doongeon/LeetCode/tree/master/0046-permutations) |
 | [0077-combinations](https://github.com/doongeon/LeetCode/tree/master/0077-combinations) |
+## Array
+|  |
+| ------- |
+| [0046-permutations](https://github.com/doongeon/LeetCode/tree/master/0046-permutations) |
 <!---LeetCode Topics End-->
