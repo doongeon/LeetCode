@@ -3,7 +3,7 @@ import java.util.*;
 class Solution {
     public int solution(String[][] relation) {
         int C = relation[0].length;
-        Set<String> v = new HashSet<>();
+        Set<Set<Integer>> v = new HashSet<>();
         List<Set<Integer>> candidates = new ArrayList<>();
         Queue<Set<Integer>> q = new ArrayDeque<>();
         for(int i = 0; i < C; i++) {
@@ -62,9 +62,9 @@ class Solution {
                 
                 Set<Integer> nextColSet = new TreeSet<>(colSet);
                 nextColSet.add(c);
-                if(v.contains(nextColSet.toString())) continue;
+                if(v.contains(nextColSet)) continue;
                 
-                v.add(nextColSet.toString());
+                v.add(nextColSet);
                 q.offer(nextColSet);
             }
         }
