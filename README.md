@@ -30,6 +30,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0051-n-queens](https://github.com/doongeon/LeetCode/tree/master/0051-n-queens) |
 | [0078-subsets](https://github.com/doongeon/LeetCode/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+| [0747-min-cost-climbing-stairs](https://github.com/doongeon/LeetCode/tree/master/0747-min-cost-climbing-stairs) |
 ## Bit Manipulation
 |  |
 | ------- |
@@ -46,4 +47,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+## Dynamic Programming
+|  |
+| ------- |
+| [0747-min-cost-climbing-stairs](https://github.com/doongeon/LeetCode/tree/master/0747-min-cost-climbing-stairs) |
 <!---LeetCode Topics End-->
