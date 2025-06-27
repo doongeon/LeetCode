@@ -31,6 +31,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0051-n-queens](https://github.com/doongeon/LeetCode/tree/master/0051-n-queens) |
 | [0078-subsets](https://github.com/doongeon/LeetCode/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+| [0300-longest-increasing-subsequence](https://github.com/doongeon/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0747-min-cost-climbing-stairs](https://github.com/doongeon/LeetCode/tree/master/0747-min-cost-climbing-stairs) |
 ## Bit Manipulation
 |  |
@@ -52,9 +53,14 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0062-unique-paths](https://github.com/doongeon/LeetCode/tree/master/0062-unique-paths) |
+| [0300-longest-increasing-subsequence](https://github.com/doongeon/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 | [0747-min-cost-climbing-stairs](https://github.com/doongeon/LeetCode/tree/master/0747-min-cost-climbing-stairs) |
 ## Combinatorics
 |  |
 | ------- |
 | [0062-unique-paths](https://github.com/doongeon/LeetCode/tree/master/0062-unique-paths) |
+## Binary Search
+|  |
+| ------- |
+| [0300-longest-increasing-subsequence](https://github.com/doongeon/LeetCode/tree/master/0300-longest-increasing-subsequence) |
 <!---LeetCode Topics End-->
