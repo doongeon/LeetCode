@@ -45,6 +45,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+| [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
 ## Matrix
 |  |
 | ------- |
@@ -63,4 +64,20 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0300-longest-increasing-subsequence](https://github.com/doongeon/LeetCode/tree/master/0300-longest-increasing-subsequence) |
+## Breadth-First Search
+|  |
+| ------- |
+| [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+## Graph
+|  |
+| ------- |
+| [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+## Heap (Priority Queue)
+|  |
+| ------- |
+| [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+## Shortest Path
+|  |
+| ------- |
+| [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
 <!---LeetCode Topics End-->
