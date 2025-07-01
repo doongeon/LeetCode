@@ -18,22 +18,22 @@ class Solution {
         Queue<Node> pq = new PriorityQueue<Node>((n1, n2) -> n2.p > n1.p ? 1 : -1);
 
         pq.offer(new Node(start_node, 1));
+        prob[start_node] = 1;
         
         while(!pq.isEmpty()) {
             Node cur = pq.poll();
 
             if(prob[cur.v] > cur.p) continue;
-
-            prob[cur.v] = cur.p;
             if(cur.v == end_node) break;
-
             if(!adj.containsKey(cur.v)) continue;
             for(int[] e : adj.get(cur.v)) {
                 int to = e[0];
                 double p = cur.p * succProb[e[1]];
 
-                if(p > prob[to])
+                if(p > prob[to]) {
+                    prob[to] = p;
                     pq.offer(new Node(to, p));
+                }
             }
         }
         
