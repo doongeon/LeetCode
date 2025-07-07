@@ -32,6 +32,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0078-subsets](https://github.com/doongeon/LeetCode/tree/master/0078-subsets) |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
 | [0300-longest-increasing-subsequence](https://github.com/doongeon/LeetCode/tree/master/0300-longest-increasing-subsequence) |
+| [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 | [0747-min-cost-climbing-stairs](https://github.com/doongeon/LeetCode/tree/master/0747-min-cost-climbing-stairs) |
 | [1325-path-with-maximum-probability](https://github.com/doongeon/LeetCode/tree/master/1325-path-with-maximum-probability) |
 ## Bit Manipulation
@@ -46,11 +47,13 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 |  |
 | ------- |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+| [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
 ## Matrix
 |  |
 | ------- |
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
+| [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 ## Dynamic Programming
 |  |
 | ------- |
@@ -68,6 +71,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 ## Breadth-First Search
 |  |
 | ------- |
+| [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
 ## Graph
 |  |
