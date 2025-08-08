@@ -2,12 +2,16 @@ import java.util.*;
 
 class Solution {
     public int solution(String s) {
-        int answer = s.length();
+        int answer = 1000;
+        
+        if(s.length() < 3) return s.length();
+        
         for(int i = 1; i <= s.length() / 2; i++) {
             String resultStr = "";
-            
             Queue<String> q = new ArrayDeque<>();
-            int head = 0, tail = head + i;
+            
+            int head = 0;
+            int tail = head + i;
             while(tail <= s.length()) {
                 q.offer(s.substring(head, tail));
                 head = tail;
@@ -18,23 +22,17 @@ class Solution {
             
             while(!q.isEmpty()) {
                 int count = 1;
-                String cur = q.poll();
-                while(!q.isEmpty() && q.peek().equals(cur)) {
-                    q.poll();
+                String str = q.poll();
+                while(!q.isEmpty() && q.peek().equals(str)) {
                     count++;
+                    q.poll();
                 }
-                
-                if(count == 1) {
-                    resultStr += cur;
-                } else {
-                    resultStr += count + cur;
-                }
+                 
+                if(count == 1) resultStr += str;
+                else resultStr += count + str;
             }
             
-            if(resultStr.length() < answer) {
-                answer = resultStr.length();
-                System.out.println(resultStr);
-            }
+            answer = Math.min(answer, resultStr.length());
         }
         
         return answer;
