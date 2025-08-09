@@ -1,36 +1,31 @@
 import java.util.*;
 
 class Solution {
-    private int minDiff = Integer.MAX_VALUE;
-    
+    private int minDiff = 100;
     public int solution(int n, int[][] wires) {
-        List<Integer>[] adj = new ArrayList[n + 1];
-        
-        for(int i = 0; i <= n; i++) {
-            adj[i] = new ArrayList<>();
+        List<List<Integer>> adj = new ArrayList<>();
+        for(int i = 0; i <= n; i++) adj.add(new ArrayList<>());
+        for(int[] w : wires) {
+            adj.get(w[0]).add(w[1]);
+            adj.get(w[1]).add(w[0]);
         }
         
-        for(int[] wire : wires) {
-            adj[wire[0]].add(wire[1]);
-            adj[wire[1]].add(wire[0]);
-        }
-        
-        dfs(1, adj, new boolean[n + 1], n);
+        dfs(1, new boolean[n + 1], adj);
         
         return minDiff;
     }
     
-    public int dfs(int node, List<Integer>[] adj, boolean[] v, int n) {
+    public int dfs(final int node, final boolean[] v, final List<List<Integer>> adj) {
+        v[node] = true;
         int count = 1;
         
-        for(int next : adj[node]) {
-            if(v[next]) continue;
-            v[next] = true;
-            count += dfs(next, adj, v, n);
+        for(int child : adj.get(node)) {
+            if(v[child]) continue;
+            
+            count += dfs(child, v, adj);
         }
         
-        minDiff = Math.min(minDiff, Math.abs(n - count - count));
-        
+        minDiff = Math.min(minDiff, Math.abs(adj.size() - 1 - 2 * count));
         return count;
     }
 }
