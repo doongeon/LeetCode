@@ -2,32 +2,46 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] info, int[][] edges) {
-        List<Integer>[] child = new ArrayList[info.length];
-        for(int i = 0; i < info.length; i++) child[i] = new ArrayList<>();
-        for(int[] e : edges) {
-            int from = e[0];
-            int to = e[1];
-            child[from].add(to);
+        List<List<Integer>> adj = new ArrayList<>();
+        for(int i = 0; i < info.length; i++) adj.add(new ArrayList<>());
+        for(int[] edge : edges) {
+            int from = edge[0];
+            int to = edge[1];
+            
+            adj.get(from).add(to);
+            adj.get(to).add(from);
         }
         
+        Set<Integer> next = new HashSet<>();
+        next.add(0);
+        boolean[] v = new boolean[info.length];
+        v[0] = true;
         
-        Set<Integer> s = new HashSet<>();
-        s.add(0);
-        return dfs(0, 0, 0, info, child, s);
+        return dfs(0, 0, 0, next, adj, info, v);
     }
     
-    private int dfs(int cur, int sheep, int wolf, int[] info, List<Integer>[] child, Set<Integer> s) {
-        if(info[cur] == 1) wolf++;
-        if(info[cur] == 0) sheep++;
+    private int dfs(final int node, final int sheep, final int wolf, final Set<Integer> next, final List<List<Integer>> adj, final int[] info, final boolean[] v) {
+        Set<Integer> newNext = new HashSet<>(next);
+        newNext.remove(node);
         
-        if(wolf >= sheep) return -1;
-        Set<Integer> nextS = new HashSet<>(s);
-        for(int c : child[cur]) nextS.add(c);
-        nextS.remove(cur);
+        int newSheep = sheep;
+        int newWolf = wolf;
         
-        int maxSheep = sheep;
-        for(int next : nextS) {
-            maxSheep = Math.max(maxSheep, dfs(next, sheep, wolf, info, child, nextS));
+        if(info[node] == 0) newSheep++;
+        else newWolf++;
+        
+        if(newWolf >= newSheep) return 0;
+        
+        for(int child : adj.get(node)) {
+            if(v[child]) continue;
+            newNext.add(child);
+        }
+        
+        int maxSheep = newSheep;
+        for(int n : newNext) {
+            v[n] = true;
+             maxSheep = Math.max(maxSheep, dfs(n, newSheep, newWolf, newNext, adj, info, v));
+            v[n] = false;
         }
         
         return maxSheep;
