@@ -2,42 +2,46 @@ import java.util.*;
 
 class Solution {
     public int solution(String begin, String target, String[] words) {
-        boolean[] v = new boolean[words.length];
-        Queue<String> q = new ArrayDeque<>();
+        int answer = 0;
+        boolean is_include = false;
+        for(String word : words) {
+            if(word.equals(target)) is_include = true;
+        }
+        if(!is_include) return 0;
         
+        Queue<String> q = new ArrayDeque<>();
+        boolean[] v = new boolean[words.length];
         q.offer(begin);
         int dist = 0;
         
+        
         while(!q.isEmpty()) {
-            int qSize = q.size();
+            int q_size = q.size();
             
-            while(qSize > 0) {
-                qSize--;
+            for(int i = 0; i < q_size; i++) {
                 String cur = q.poll();
+                if(cur.equals(target)) {
+                    answer = dist;
+                }
 
-                if(cur.equals(target)) return dist;
-
-                for(int i = 0; i < words.length; i++) {
-                    if(v[i]) continue;
-
-                    int count = 0;
-
-                    for(int c = 0; c < begin.length(); c++) {
-                        if(cur.charAt(c) != words[i].charAt(c)) count++;
+                for(int word_idx = 0; word_idx < words.length; word_idx++) {
+                    if(v[word_idx]) continue;
+                    String next = words[word_idx];
+                    int match_count = 0;
+                    for(int c = 0; c < next.length(); c++) {
+                        if(cur.charAt(c) == next.charAt(c)) match_count++;
                     }
 
-                    if(count == 1) {
-                        v[i] = true;
-                        q.offer(words[i]);
+                    if(match_count == next.length() - 1) {
+                        q.offer(next);
+                        v[word_idx] = true;
                     }
                 }
             }
             
-            
-            
             dist++;
         }
         
-        return 0;
+        return answer;
     }
 }
