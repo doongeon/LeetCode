@@ -2,37 +2,33 @@ import java.util.*;
 
 class Solution {
     public int solution(String s) {
-        int answer = 1000;
-        
-        if(s.length() < 3) return s.length();
-        
-        for(int i = 1; i <= s.length() / 2; i++) {
-            String resultStr = "";
+        int answer = Integer.MAX_VALUE;
+        for(int token_size = 1; token_size <= s.length(); token_size++) {
             Queue<String> q = new ArrayDeque<>();
-            
-            int head = 0;
-            int tail = head + i;
-            while(tail <= s.length()) {
-                q.offer(s.substring(head, tail));
-                head = tail;
-                tail += i;
+            StringBuilder sb = new StringBuilder();
+            for(int i = 0; i < s.length(); i += token_size) {
+                int end = Math.min(i + token_size, s.length());
+                q.offer(s.substring(i, end));
             }
-            
-            if(head < s.length()) q.offer(s.substring(head));
             
             while(!q.isEmpty()) {
+                String cur = q.poll();
                 int count = 1;
-                String str = q.poll();
-                while(!q.isEmpty() && q.peek().equals(str)) {
-                    count++;
+                
+                while(!q.isEmpty() && cur.equals(q.peek())) {
                     q.poll();
+                    count++;
                 }
-                 
-                if(count == 1) resultStr += str;
-                else resultStr += count + str;
+                
+                if(count == 1) {
+                    sb.append(cur);
+                } else {
+                    sb.append(count);
+                    sb.append(cur);
+                }
             }
             
-            answer = Math.min(answer, resultStr.length());
+            answer = Math.min(answer, sb.toString().length());
         }
         
         return answer;
