@@ -1,38 +1,36 @@
 class Solution {
     public int networkDelayTime(int[][] times, int n, int k) {
-        int[] dist = new int[n + 1];
-        List<int[]>[] adj = new ArrayList[n + 1];
-        for(int i = 0; i <= n; i++) {
-            adj[i] = new ArrayList<>();
+        int[][] coast = new int[n + 1][n + 1];
+        for(int i = 0; i <= n; i++) Arrays.fill(coast[i], 1000000);
+        for(int[] time : times) coast[time[0]][time[1]] = time[2];
+        for(int i = 1; i <= n; i++) coast[i][i] = 0;
+
+        PriorityQueue<int[]> pq = new PriorityQueue<>((e1, e2) -> e1[1] - e2[1]);
+        for(int j = 1; j <= n; j++) {
+            if(k == j) continue;
+            if(coast[k][j] == 1000000) continue;
+            pq.offer(new int[] {j, coast[k][j]});
         }
-
-        for(int[] t : times) 
-            adj[t[0]].add(new int[] {t[1], t[2]});
-        
-        Queue<int[]> pq = new PriorityQueue<>((e1, e2) -> e1[1] - e2[1]);
-        final int INF = 99999;
-        Arrays.fill(dist, INF);
-        dist[k] = 0;
-
-        for(int[] e : adj[k])
-            pq.offer(e);
 
         while(!pq.isEmpty()) {
             int[] cur = pq.poll();
-            int to = cur[0];
-            int t = cur[1];
 
-            if(t >= dist[to]) continue;
-            
-            dist[to] = t;
-            for(int[] next : adj[to]) {
-                pq.offer(new int[] {next[0], t + next[1]});
+            for(int next_node = 1; next_node <= n; next_node++) {
+                if(coast[cur[0]][next_node] == 1000000) continue;
+
+                int new_coast = cur[1] + coast[cur[0]][next_node];
+                if(new_coast < coast[k][next_node]) {
+                    coast[k][next_node] = new_coast;
+                    pq.offer(new int[] {next_node, new_coast});
+                }
             }
         }
 
-        int max = 0;
-        for(int i = 1; i <= n; i++) max = Math.max(dist[i], max);
-        
-        return max == INF ? -1 : max;
+        int answer = 0;
+        for(int i = 1; i <= n; i++) {
+            answer = Math.max(answer, coast[k][i]);
+        }
+
+        return answer == 1000000 ? -1 : answer;
     }
 }
