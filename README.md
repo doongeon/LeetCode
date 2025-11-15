@@ -49,6 +49,7 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | [0079-word-search](https://github.com/doongeon/LeetCode/tree/master/0079-word-search) |
 | [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+| [0801-is-graph-bipartite](https://github.com/doongeon/LeetCode/tree/master/0801-is-graph-bipartite) |
 ## Matrix
 |  |
 | ------- |
@@ -73,10 +74,12 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0529-minesweeper](https://github.com/doongeon/LeetCode/tree/master/0529-minesweeper) |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+| [0801-is-graph-bipartite](https://github.com/doongeon/LeetCode/tree/master/0801-is-graph-bipartite) |
 ## Graph
 |  |
 | ------- |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
+| [0801-is-graph-bipartite](https://github.com/doongeon/LeetCode/tree/master/0801-is-graph-bipartite) |
 | [1325-path-with-maximum-probability](https://github.com/doongeon/LeetCode/tree/master/1325-path-with-maximum-probability) |
 ## Heap (Priority Queue)
 |  |
@@ -88,4 +91,8 @@ This is an auto push repository for Baekjoon Online Judge created with [Baekjoon
 | ------- |
 | [0744-network-delay-time](https://github.com/doongeon/LeetCode/tree/master/0744-network-delay-time) |
 | [1325-path-with-maximum-probability](https://github.com/doongeon/LeetCode/tree/master/1325-path-with-maximum-probability) |
+## Union Find
+|  |
+| ------- |
+| [0801-is-graph-bipartite](https://github.com/doongeon/LeetCode/tree/master/0801-is-graph-bipartite) |
 <!---LeetCode Topics End-->
