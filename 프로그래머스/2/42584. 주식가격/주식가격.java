@@ -2,15 +2,12 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] prices) {
-        ArrayDeque<Integer> stack = new ArrayDeque<>();
-        int[] result = new int[prices.length];
-        
-        stack.push(0);
-        
-        for(int i = 1; i < prices.length; i++) {            
+        ArrayDeque<Integer> stack = new ArrayDeque<>(); // 인덱스를 저장하는 스택
+        int[] answer = new int[prices.length];
+        for(int i = 0; i < prices.length; i++) {
             while(!stack.isEmpty() && prices[stack.peek()] > prices[i]) {
                 int idx = stack.pop();
-                result[idx] = i - idx;
+                answer[idx] = i - idx;
             }
             
             stack.push(i);
@@ -18,9 +15,9 @@ class Solution {
         
         while(!stack.isEmpty()) {
             int idx = stack.pop();
-            result[idx] = prices.length - idx - 1;
+            answer[idx] = prices.length - idx - 1;
         }
         
-        return result;
+        return answer;
     }
 }
